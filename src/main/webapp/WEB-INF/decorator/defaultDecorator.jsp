@@ -15,6 +15,7 @@
 <link href="${contextPath}/resources/css/templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="${contextPath}/resources/css/jquery-ui.css" />
 <link rel="stylesheet" href="${contextPath}/resources/css/Lang-Style.css" />
+<link rel="stylesheet" href="${contextPath}/resources/css/jquery.dataTables.css" />
 
 <script type="text/javascript" src="${contextPath}/resources/js/jquery-1.10.2.min.js"></script>
 <script type='text/javascript' src="${contextPath}/resources/js/lang.js"></script>

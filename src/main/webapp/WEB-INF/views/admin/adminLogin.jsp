@@ -24,8 +24,9 @@
 				 </div>	
 			 </c:if>
 			 
-	<h2>Admin Login</h2>
+	<h2 align="center">Admin Login</h2>
 	
+<div align="center">
 	<form action="<c:url value='j_spring_security_check' />" name="loginForm" method='POST'>
       
        <fieldset id="field" style="width:376px; height:137px;">
@@ -47,6 +48,7 @@
 		 <div class="cleaner"></div>
 		 	  
 		</fieldset>
-	</form> 
+	</form>
+	</div> 
 </body>
 </html>
