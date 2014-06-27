@@ -1,0 +1,42 @@
+.menu {
+	width: 100px;
+	list-style-type: none;
+}
+
+.toplevel {
+	display: block;
+	padding: 0 10px;
+	line-height: 2;
+	color: #fff;
+	text-decoration: none;
+	background: #000000;
+}
+
+/* Dropdowns */
+.dropdown {
+	position: relative;
+	z-index: 200;
+}
+
+.submenu {
+	position: absolute;
+	top: 0;
+	left: -40px;
+	display: none;
+	width: 100px;
+	list-style-type: none;
+	padding-top: 2em;
+	z-index: 200;
+}
+
+.hover .submenu {
+	display: block;
+}
+
+.submenu a {
+	display: block;
+	padding: 5px;
+	color: #fff;
+	text-decoration: none;
+	background: #787878  ;
+}
