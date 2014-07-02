@@ -27,7 +27,10 @@
 
 		<intercept-url pattern="/admin/adminLogin" access="permitAll()" />	
 		<intercept-url pattern="/admin/login" access="permitAll()" />	
-		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />		
+		<intercept-url pattern="/admin/loginfailed" access="hasRole('ROLE_ADMIN')" />	
+		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+		
+		
 				
 		<form-login login-processing-url="/admin/j_spring_security_check"  login-page="/admin/login" 
 		            authentication-failure-url="/admin/loginfailed"	default-target-url="/admin/adminHome" always-use-default-target="true"/>
@@ -55,7 +58,8 @@
  
 		   users-by-username-query="select username,password,enabled from users where username=?" 
  
-		   authorities-by-username-query="select u.username, ur.user_role from users as u, user_roles as ur where u.user_id = ur.user_id and u.username =?" 
+		   authorities-by-username-query="select us.username, ur.authority from users us, user_roles ur   
+       									  where us.user_id = ur.user_id and us.username =?  "  
  
 		/>
 	   </authentication-provider>

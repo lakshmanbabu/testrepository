@@ -22,6 +22,9 @@
 <script type='text/javascript' src="${contextPath}/resources/js/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/angular.min.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/bootbox.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/bootstrap.js"></script>
  	
 <script language="javascript" type="text/javascript">
 function clearText(field)

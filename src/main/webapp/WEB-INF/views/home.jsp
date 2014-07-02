@@ -101,7 +101,7 @@
                 <h2>Welcome to our Website</h2>
                 
                 <div class="float_l_image">
-	                <img src="resources/images/java hd wallpapers, java image.png" alt="image" style="width: 243px; height: 200px;" />
+	                <img src="resources/images/java-logo.jpg" alt="image" style="width: 243px; height: 200px;" />
                 </div>
                 
                 <p><a href="javascript:void(0);" target="_parent">Free CSS Templates</a> are provided by <a href="javascript:void(0);" target="_parent">TemplateMo.com</a> for everyone. You can download, modify and apply any template for your own websites. Credits go to <a href="javascript:void(0);" target="_blank">Public Domain Pictures</a> and <a href="javascript:void(0);">Free Vectors</a>. Validate <a href="javascript:void(0);">XHTML</a> &amp; <a href="javascript:void(0);">CSS</a>.</p>
@@ -117,7 +117,7 @@
                     <h2>Gallery</h2>
                     
                     <ul class="gallery">
-                    	<li><a href="javascript:void(0);"><img src="resources/images/java hd wallpapers, java image.png" alt="image 1" style="width: 80px; height: 80px;"/></a></li>
+                    	<li><a href="javascript:void(0);"><img src="resources/images/java-logo.jpg" alt="image 1" style="width: 80px; height: 80px;"/></a></li>
                         <li><a href="javascript:void(0);"><img src="resources/images/Spring.jpg" alt="image 2"style="width: 80px; height: 80px;" /></a></li>
                         <li><a href="javascript:void(0);"><img src="resources/images/ajaxs.jpg" alt="image 3"  style="width: 80px; height: 80px;"/></a></li>
                         <li><a href="javascript:void(0);"><img src="resources/images/SpringSecurity.jpg" alt="image 4" style="width: 80px; height: 80px;"/></a></li>

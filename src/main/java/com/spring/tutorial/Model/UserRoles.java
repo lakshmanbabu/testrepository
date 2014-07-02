@@ -1,7 +1,5 @@
 package com.spring.tutorial.Model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,58 +10,59 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
+
 @Entity
 @Table(name="user_roles")
-public class UserRoles implements Serializable{
-
-	private static final long serialVersionUID = 1L;
-	private Integer userRoleId;
-	private String userRole;
-	private User user;
+public class UserRoles {
 	
+	private Integer userRoleId;
+	private String authority;
+	private User user;
 	
 	public UserRoles()
 	{
 		
 	}
-	public UserRoles(Integer userRoleId,String userRole)
+	public UserRoles(Integer userRoleId,String authority)
 	{
 		this.userRoleId=userRoleId;
-		this.userRole=userRole;
+		this.authority=authority;
 	}
 	
-	public UserRoles(String userRole)
+	public UserRoles(String authority)
 	{
 		
-		this.userRole=userRole;
+		this.authority=authority;
 	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="role_id")
+	@Column(name="USER_ROLE_ID")
 	public Integer getUserRoleId() {
 		return userRoleId;
 	}
 	public void setUserRoleId(Integer userRoleId) {
 		this.userRoleId = userRoleId;
 	}
-	@Column(name="user_role")
-	public String getUserRole() {
-		return userRole;
+	@Column(name="AUTHORITY")
+	public String getAuthority() {
+		return authority;
 	}
-	public void setUserRole(String userRole) {
-		this.userRole = userRole;
+	public void setAuthority(String authority) {
+		this.authority = authority;
 	}
 	
+	@JsonIgnore
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="user_id")
 	public User getUser() {
 		return user;
 	}
+	
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
 	
 }

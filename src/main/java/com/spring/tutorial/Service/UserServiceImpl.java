@@ -1,5 +1,7 @@
 package com.spring.tutorial.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,5 +29,40 @@ public class UserServiceImpl implements UserService{
 		userDao.saveUserRole(userRoles);
 		
 	}
+
+	@Override
+	@Transactional
+	public List<User> getUsersList() {
+		List<User> ur =userDao.getUsersList();
+		return ur;
+	}
+
+	@Override
+	@Transactional
+	public User getUserById(Integer userId) {
+		User ur =userDao.getUserById(userId);
+		return ur;
+	}
+
+	@Override
+	@Transactional
+	public void updateUserDetails(User user) {
+		userDao.updateUserDetails(user);
+		
+	}
+
+	@Override
+	@Transactional
+	public void deleteUserById(Integer userId) {
+		userDao.deleteUserById(userId);
+		
+	}
+
+	/*@Override
+	@Transactional
+	public UserRoles getUserRoleById(Integer userId) {
+		
+		return userDao.getUserRoleById(userId);
+	}*/
 
 }

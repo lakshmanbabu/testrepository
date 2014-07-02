@@ -33,7 +33,7 @@ public class LoginController extends CommonController{
 	 
 	    @RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	    public String loginerror(Model model) {
-	        model.addAttribute("error", "true");
+	    	model.addAttribute("error", "true");
 	        
 	        return "Login";
 	    }	    

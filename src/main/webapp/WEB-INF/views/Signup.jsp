@@ -102,9 +102,20 @@ $(document).ready(function(){
 	$("#signup").click(function(){
 		
 		 $("#form-success").html("");
-		 
+		 $.blockUI({ 
+	         message: '<h6><img alt="Please Wait" src="resources/bootstrap/images/ajax-loader.gif" /> </h6>',
+	         css: { 
+	             border: 'none',     	               
+	             '-webkit-border-radius': '5px', 
+	             '-moz-border-radius': '5px',
+	         } 
+	     }); 
 		 $.post("${contextPath}/saveUserDetails",($("#signup-form").serialize()),function(data){
-			 
+		     $.unblockUI();
+		    /*  bootbox.alert(data.message,function(){
+		         $("#signup-form")[0].reset();
+  				}); */
+	  			
 			 $("#form-success").html(data.message);
 			 $("#signup-form")[0].reset();
 		 });

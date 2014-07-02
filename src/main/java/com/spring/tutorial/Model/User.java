@@ -2,12 +2,17 @@ package com.spring.tutorial.Model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,8 +34,10 @@ public class User implements Serializable {
 	private String country;
 	private String state;
 	private Date createdDate;
+	private String userRole;
 	
-
+	private Set<UserRoles> userRoles = new HashSet<UserRoles>(0);
+	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -134,6 +141,24 @@ public class User implements Serializable {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
+	@Column(name="userRole")
+	public String getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
+	
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="user",cascade=CascadeType.ALL)
+	public Set<UserRoles> getUserRoles() {
+	return userRoles;
+   }
+	
+	public void setUserRoles(Set<UserRoles> role) {
+		this.userRoles = (Set<UserRoles>) role;
+	}
+	
+	
 	
 	
 }
