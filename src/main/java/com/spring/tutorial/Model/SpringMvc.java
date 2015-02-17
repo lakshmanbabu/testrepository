@@ -30,7 +30,7 @@ public class SpringMvc implements Serializable{
 	private String subTitleContent;
 	private String titleImage;
 	private Date createdDate;
-	
+	private String topic;
 	private SpringTitles titles;
 
 	@Id
@@ -121,10 +121,7 @@ public class SpringMvc implements Serializable{
 		this.titles = titles;
 	}
 	
-	
-	private String topic;
-
-	@Transient
+    @Column(name="topic")
 	public String getTopic() {
 		return topic;
 	}

@@ -26,8 +26,8 @@
 				<th>Heading Content</th>
 				<th>Title</th>
 				<th>Title Content</th>
-				<th>Sub Title</th>
-				<th>Sub TitleContent</th>
+				<th>Edit</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -39,8 +39,14 @@
 					<td style="padding: 2px;">${springlist.headingContent}</td>
 					<td style="padding: 2px;">${springlist.title}</td>
 					<td style="padding: 2px;">${springlist.titleContent}</td>
-					<td style="padding: 2px;">${springlist.subTitle}</td>
-					<td style="padding: 2px;">${springlist.subTitleContent}</td>
+					<td style="padding: 2px;">
+						&nbsp;&nbsp;
+						<a href="javascript:void(0);" onclick="EditUserDetails('${springlist.springId}')"><img src="${contextPath}/resources/images/edit.jpg" width="25px" height="25px" /></a>
+					</td>
+					<td style="padding: 2px;">
+						&nbsp;&nbsp;
+						<a onclick="deleteUser('${springlist.springId}');" href="javascript:void(0);" ><img src="${contextPath}/resources/images/delete1.jpg" width="25px"	height="25px" /></a>
+					</td>
 				</tr>
 			</c:forEach>
 		

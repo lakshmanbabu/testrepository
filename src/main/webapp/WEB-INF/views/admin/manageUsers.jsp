@@ -17,7 +17,7 @@
  <script type="text/javascript" src="${contextPath}/resources/js/common.js"></script> 
 
 	<h3 style="margin-top: 62px; margin-left: 151px;">Manage Users</h3>
-	<button class="btn btn-primary" style="margin-left: 990px;"  onclick="addNewUser();">Add New User</button><br/>
+	<button class="btn btn-primary" style="margin-left: 990px;"  onclick="addNewUser();">Add Spring Topic</button><br/>
 	<span id="successMsg"></span>
 	<hr/>
 	
@@ -57,11 +57,13 @@
 					<td style="padding: 2px;">${users.state}</td>
 					<td style="padding: 2px;">${users.country}</td>
 					<td style="padding: 2px;">
-						<%-- <a href="${contextPath}/admin/editUserDetails?userId="+${users.userRoleId}><img src="${contextPath}/resources/images/edit.jpg" width="20px" height="20px" /></a></td> --%>
+						&nbsp;&nbsp;
 					<a href="javascript:void(0);" onclick="EditUserDetails('${users.userId}')"><img src="${contextPath}/resources/images/edit.jpg" width="25px" height="25px" /></a></td>
 					
 					<td style="padding: 2px;">
-						<a onclick="deleteUser('${users.userId}');" href="javascript:void(0);" ><img src="${contextPath}/resources/images/delete1.jpg" width="25px"	height="25px" /></a></td>
+					&nbsp;&nbsp;
+						<a onclick="deleteUser('${users.userId}');" href="javascript:void(0);" ><img src="${contextPath}/resources/images/delete1.jpg" width="25px"	height="25px" /></a>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
