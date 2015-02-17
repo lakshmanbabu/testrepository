@@ -283,11 +283,11 @@
 			<version>3.9</version>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.5-beta4</version>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>commons-collections</groupId>

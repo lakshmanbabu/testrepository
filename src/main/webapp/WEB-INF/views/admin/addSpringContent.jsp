@@ -15,8 +15,8 @@
  
 	<h3 style="margin-top: 62px; margin-left: 151px;">Add SpringMvc Content</h3>
 	
-<input type="hidden" id="contextPath" value="${contextPath}"/>
-  <div id="addSpringMvcDialog" style="margin-top: 25px;"> 
+		<input type="hidden" id="contextPath" value="${contextPath}"/>
+		  <div id="addSpringMvcDialog" style="margin-top: 25px;"> 
 				<form id="springmvc-form">
 				<input type="hidden" name="springId" id="springId" >
 			    <div style="margin-left: 23px;">
@@ -41,14 +41,14 @@
 			    			<td style="width: 157px;">Title Content</td>
 			    			<td ><textarea  name="titleContent"  id="titleContent" required="required"></textarea><br/></td>
 			    		</tr>
-			    		<tr>
+			    		<!-- <tr>
 			    			<td style="width: 157px;">Sub Title</td>
 			    			<td><input type="text" name="subTitle" class="form-control" id="subTitle" style="width: 910px;" required="required"><br/></td>
 			    		</tr>
 			    		<tr>
 			    			<td style="width: 157px;">Sub Title Content</td>
 			    			<td><textarea  name="subTitleContent"  id="subTitleContent"  required="required"></textarea><br/></td>
-			    		</tr>
+			    		</tr> -->
 			    		
 			    		<tr align="right">
 			    			<td colspan="2">

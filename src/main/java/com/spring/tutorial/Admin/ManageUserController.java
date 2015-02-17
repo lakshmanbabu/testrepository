@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.tutorial.Common.CommonController;
+import com.spring.tutorial.Common.ConstantClass;
 import com.spring.tutorial.Model.User;
 
 @Controller
@@ -25,7 +26,7 @@ public class ManageUserController extends CommonController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ManageUserController.class);
 	
-	@RequestMapping(value="/manageUsers",method = RequestMethod.GET)
+	@RequestMapping(value=ConstantClass.MANAGE_USERS,method = RequestMethod.GET)
 	public String signup(Locale locale,Model model) {
 
 		logger.info("manageUsers ");
@@ -34,19 +35,21 @@ public class ManageUserController extends CommonController {
 		model.addAttribute("page", "manageUsers");
 		model.addAttribute("userList", userList);
 		
+		model.addAttribute("manageUsersActive", true);
+		
 		return "admin/manageUsers";
 	}
 
-	@RequestMapping(value="/editUserDetails",method = RequestMethod.GET)
+	@RequestMapping(value=ConstantClass.EDIT_USER,method = RequestMethod.GET)
 	public @ResponseBody User editUserDetails(@RequestParam Integer userId,Model model) {
 
 		logger.info("manageUsers ");
 		User user=userService.getUserById(userId);
-		
+		model.addAttribute("manageUsersActive", true);
 		return user;
 	}
 	
-	@RequestMapping(value="/updateUserDetails",method = RequestMethod.POST)
+	@RequestMapping(value=ConstantClass.UPDATE_USER,method = RequestMethod.POST)
 	public @ResponseBody String  updateUserDetails(@ModelAttribute User user,Model model) {
 
 		logger.info("manageUsers ");
@@ -57,11 +60,11 @@ public class ManageUserController extends CommonController {
 			user.setCreatedDate(user1.getCreatedDate());
 			userService.updateUserDetails(user);
 		}
-		
+		model.addAttribute("manageUsersActive", true);
 		return "admin/manageUsers";
 	}
 	
-	@RequestMapping(value="/deleteUser/{userId}",method=RequestMethod.GET)
+	@RequestMapping(value=ConstantClass.DELETE_USER,method=RequestMethod.GET)
 	public @ResponseBody String deleteSelectedEducations(@PathVariable Integer userId, Model model,HttpServletRequest request){
 		
 		userService.deleteUserById(userId);

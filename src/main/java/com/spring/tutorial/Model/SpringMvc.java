@@ -5,9 +5,15 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
 @Table(name="spring_mvc")
@@ -16,7 +22,6 @@ public class SpringMvc implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer springId;
-	private String topic;
 	private String heading;
 	private String headingContent;
 	private String title;
@@ -26,6 +31,7 @@ public class SpringMvc implements Serializable{
 	private String titleImage;
 	private Date createdDate;
 	
+	private SpringTitles titles;
 
 	@Id
 	@GeneratedValue
@@ -36,15 +42,6 @@ public class SpringMvc implements Serializable{
 
 	public void setSpringId(Integer springId) {
 		this.springId = springId;
-	}
-	
-	@Column(name="topic")
-	public String getTopic() {
-		return topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
 	}
 
 	@Column(name="heading")
@@ -111,6 +108,29 @@ public class SpringMvc implements Serializable{
 
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
+	}
+
+	@JsonIgnore
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="sTitleId")
+	public SpringTitles getTitles() {
+		return titles;
+	}
+
+	public void setTitles(SpringTitles titles) {
+		this.titles = titles;
+	}
+	
+	
+	private String topic;
+
+	@Transient
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
 	}
 	
 	

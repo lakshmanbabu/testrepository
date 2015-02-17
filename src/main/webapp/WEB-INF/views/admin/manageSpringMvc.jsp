@@ -12,7 +12,7 @@
  
 <h3 style="margin-top: 62px; margin-left: 151px;">Manage SpringMvc Tutorial</h3>
 
-<a href="${contextPath}/admin/2014/002/addSpringContent"><button class="btn btn-primary" style="margin-left: 990px;">Add</button></a><br/>
+	<a href="${contextPath}/admin/2014/002/addSpringContent"><button class="btn btn-primary" style="margin-left: 990px;">Add Spring Topic</button></a><br/>
 	<span id="successMsg"></span>
 	<hr/>
 	

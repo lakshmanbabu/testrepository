@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.tutorial.Common.CommonController;
+import com.spring.tutorial.Common.ConstantClass;
 import com.spring.tutorial.Common.Email;
 import com.spring.tutorial.Common.GenericResponse;
 import com.spring.tutorial.Model.User;
@@ -27,7 +28,7 @@ public class HomeController extends CommonController{
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = ConstantClass.DEFAULT_HOMEPAGE, method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 	
@@ -35,7 +36,7 @@ public class HomeController extends CommonController{
 	}
 	
 	
-	@RequestMapping("/signup")
+	@RequestMapping(value=ConstantClass.USER_SIGNUP, method = RequestMethod.GET)
 	public String signup(Locale locale,Model model) {
 
 		System.out.println("signup page");
@@ -44,7 +45,7 @@ public class HomeController extends CommonController{
 	}
 	
 	
-	@RequestMapping(value="/saveUserDetails", method = RequestMethod.POST)
+	@RequestMapping(value=ConstantClass.USER_SIGNUP_PROCESS, method = RequestMethod.POST)
 	public @ResponseBody GenericResponse signupProcess(@ModelAttribute User user,Model model, Locale locale,HttpServletRequest request,HttpServletResponse response1) {
 
 		System.out.println("signup Process");

@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="users")
 public class User implements Serializable {
@@ -149,6 +151,7 @@ public class User implements Serializable {
 		this.userRole = userRole;
 	}
 	
+	@JsonIgnore
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="user",cascade=CascadeType.ALL)
 	public Set<UserRoles> getUserRoles() {
 	return userRoles;

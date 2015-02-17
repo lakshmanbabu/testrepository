@@ -8,21 +8,22 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.tutorial.Dao.SpringDao;
 import com.spring.tutorial.Model.SpringMvc;
+import com.spring.tutorial.Model.SpringTitles;
 
 @Service
+@Transactional
 public class SpringServiceImpl implements SpringService{
 
 	@Autowired
 	public SpringDao springDao;
 	
 	@Override
-	@Transactional
-	public void saveSpringContent(SpringMvc springMvc) {
-		springDao.saveSpringContent(springMvc);
+	
+	public void saveSpringContent(SpringTitles springTitles) {
+		springDao.saveSpringContent(springTitles);
 	}
 
 	@Override
-	@Transactional
 	public List<SpringMvc> getSprigList() {
 		
 		return springDao.getSprigList();

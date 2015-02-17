@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@
  <script type="text/javascript" src="${contextPath}/resources/js/common.js"></script> 
 
 	<h3 style="margin-top: 62px; margin-left: 151px;">Manage Users</h3>
-	<button class="btn btn-primary" style="margin-left: 990px;"  onclick="addNewUser();">Add</button><br/>
+	<button class="btn btn-primary" style="margin-left: 990px;"  onclick="addNewUser();">Add New User</button><br/>
 	<span id="successMsg"></span>
 	<hr/>
 	
@@ -40,7 +41,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="users" items="${userList}">
+			<c:forEach var="users" items="${userList}" varStatus="status">
 				<tr>
 					<td style="padding: 2px;">${status.count}</td>
 					<td style="padding: 2px;">${users.firstname}</td>
@@ -57,17 +58,17 @@
 					<td style="padding: 2px;">${users.country}</td>
 					<td style="padding: 2px;">
 						<%-- <a href="${contextPath}/admin/editUserDetails?userId="+${users.userRoleId}><img src="${contextPath}/resources/images/edit.jpg" width="20px" height="20px" /></a></td> --%>
-					<a href="javascript:void(0);" onclick="EditUserDetails('${users.userId}')"><img src="${contextPath}/resources/images/edit.jpg" width="20px" height="20px" /></a></td>
+					<a href="javascript:void(0);" onclick="EditUserDetails('${users.userId}')"><img src="${contextPath}/resources/images/edit.jpg" width="25px" height="25px" /></a></td>
 					
 					<td style="padding: 2px;">
-						<a onclick="deleteUser('${users.userId}');" href="javascript:void(0);" ><img src="${contextPath}/resources/images/delete1.jpg" width="20px"	height="20px" /></a></td>
+						<a onclick="deleteUser('${users.userId}');" href="javascript:void(0);" ><img src="${contextPath}/resources/images/delete1.jpg" width="25px"	height="25px" /></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 
-	<input type="hidden" id="contextPath" value="${contextPath}"/>
-  <div id="editUserDialog" title="Update User" style="display: none; width: 700px; min-height: 16px; max-height: none; height: auto;"> 
+			<input type="hidden" id="contextPath" value="${contextPath}"/>
+		    <div id="editUserDialog" title="Update User" style="display: none; width: 700px; min-height: 16px; max-height: none; height: auto;"> 
 				<form id="update-Userform">
 				<input type="hidden" name="userId" id="userId" >
 			    <div style="margin-left: 23px;">

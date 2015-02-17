@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.spring.tutorial.Model.SpringMvc;
+import com.spring.tutorial.Model.SpringTitles;
 
 @Repository
 public class SpringDaoImpl implements SpringDao{
@@ -15,8 +16,8 @@ public class SpringDaoImpl implements SpringDao{
 	SessionFactory sessionFactory;
 	
 	@Override
-	public void saveSpringContent(SpringMvc springMvc) {
-		sessionFactory.getCurrentSession().save(springMvc);
+	public void saveSpringContent(SpringTitles springTitles) {
+		sessionFactory.getCurrentSession().save(springTitles);
 		
 	}
 

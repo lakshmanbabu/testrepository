@@ -70,15 +70,12 @@
 				<ul class="nav navbar-nav navbar-right" style="margin-right:30px;">
 				
 					 <sec:authorize access="isAuthenticated()">	
-								
-					<sec:authorize access="hasRole('ADMIN')">
-				    <li><a href="${contextPath}/admin/addAdmin">DDD</a></li>
-					</sec:authorize>	
-					
-				    <li><a href="<c:url value="/admin/j_spring_security_logout" />">Logout</a></li>
-					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-				    <li style="margin-top:15px"><b>Welcome   <sec:authentication property="principal.username" /></b></li>
-					
+						<%-- <sec:authorize access="hasRole('ADMIN')">
+					    <li><a href="${contextPath}/admin/addAdmin">DDD</a></li>
+						</sec:authorize> --%>	
+						 <li style="margin-top:15px">Welcome  &nbsp;: &nbsp;<b> <sec:authentication property="principal.username" /></b></li>
+					   	 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+					     <li><a href="<c:url value="/admin/j_spring_security_logout" />"> <b>Logout</b></a></li>
 					</sec:authorize>
 				</ul>
 			</div>
@@ -95,19 +92,20 @@
 				<div class="col-lg-2">
 				<sec:authorize access="isAuthenticated()">
 						<div class="list-group">
-							<ul class="list-group" style="margin-top: 45px;">
-								  <li class="list-group-item active"> <a href="${adminHomeUrl}"> Dashboard </a></li>
-								  <li class="list-group-item "> <a href="${manageUsers}">Manage Users </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> CoreJava Tutorial </a></li>
-								  <li class="list-group-item"> <a href="${manageSpringMvc}"> Spring Tutorials </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> Hibernate Tutorials </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> Ajaxs Tutorials </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> Struts Tutorials </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> Android Tutorials </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> JSP Tutorials </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> Jquery Tutorials </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> AngularJS Tutorials </a></li>
-								  <li class="list-group-item"> <a href="javascritpt:void(0);"> HTML Tutorials </a></li>
+							<ul class="list-group" style="margin-top: 40px; width: 250px;">
+								  <li class="list-group-item "> <a href="${adminHomeUrl}"> Dashboard </a></li>
+								  <li class="${manageUsersActive?'list-group-item active':'list-group-item'}"> <a href="${manageUsers}">Users Management</a></li>
+								 <!--  <li class="list-group-item"> <a href="javascritpt:void(0);"> Ajaxs Tutorials Management</a></li>
+								  <li class="list-group-item"> <a href="javascritpt:void(0);"> Android Tutorials Management</a></li>
+								  <li class="list-group-item"> <a href="javascritpt:void(0);"> AngularJS Tutorials Management</a></li>
+								  <li class="list-group-item"> <a href="javascritpt:void(0);"> CoreJava Tutorial Management</a></li>
+								  <li class="list-group-item"> <a href="javascritpt:void(0);"> Hibernate Tutorials Management</a></li>
+								  <li class="list-group-item"> <a href="javascritpt:void(0);"> HTML Tutorials Management</a></li>
+								  <li class="list-group-item"> <a href="javascritpt:void(0);"> Jquery Tutorials Management</a></li>
+								  <li class="list-group-item"> <a href="javascritpt:void(0);"> JSP Tutorials Management</a></li> -->
+								  <li class="${manageSpringActive?'list-group-item active':'list-group-item'}"> <a href="${manageSpringMvc}"> Spring Tutorials Management</a></li>
+								<!--   <li class="list-group-item"> <a href="javascritpt:void(0);"> Struts Tutorials Management</a></li> -->
+								  
 							</ul>
 						</div>
 						</sec:authorize>

@@ -52,7 +52,7 @@
 				<prop key="hibernate.cache.use_query_cache">true</prop>
 				<prop key="hibernate.cache.use_second_level_cache">true</prop>	
 				<!-- <prop key="hibernate.cache.provider_configuration_file_resource_path" >classpath:ehcache.xml</prop> -->
-				
+				 <!-- <prop key="hibernate.hbm2ddl.auto">create</prop>  -->
 			</props>
 		</property>
 		

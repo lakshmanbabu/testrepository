@@ -22,15 +22,15 @@ import com.spring.tutorial.Model.User;
 @Component("emailSender")
 public class EmailSender {
 
+	private Logger logger = Logger.getLogger(EmailSender.class);
+	
 	@Value("${EmailContactus}")
 	private String contactus;
 	
-	
-
 	@Value("${EmailProtocol}")
 	private String protocol;
 	
-	private Logger logger = Logger.getLogger(EmailSender.class);
+	
 	public static String host;
 	@Autowired
 	private JavaMailSender mailSender;
